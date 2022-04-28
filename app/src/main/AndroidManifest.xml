@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FitnessFirst">
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.example.fitnessfirst.home.ui.exercise.activities.ShouldersExerciseActivity"
             android:exported="false" />
@@ -30,8 +30,7 @@
         <activity
             android:name="com.example.fitnessfirst.login.ForgotPasswordActivity"
             android:exported="false"
-            android:label="@string/title_activity_forgot_password"
-            android:theme="@style/Theme.FitnessFirst.NoActionBar" />
+            android:label="@string/title_activity_forgot_password" />
         <activity
             android:name="com.example.fitnessfirst.home.HomeActivity"
             android:exported="false"
