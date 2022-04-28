@@ -31,6 +31,9 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 if(validation()){
                     if(FirebaseDatabaseHelper.resetPassword(binding.edtEmail.getText().toString().trim())){
                         Toast.makeText(ForgotPasswordActivity.this, "Link is sent to your email", Toast.LENGTH_SHORT).show();
+                        Intent intent =  new Intent(ForgotPasswordActivity.this,LoginActivity.class);
+                        startActivity(intent);
+
                     }
 
 
