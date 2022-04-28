@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.fitnessfirst.R;
 import com.example.fitnessfirst.repository.FirebaseDatabaseHelper;
 import com.example.fitnessfirst.repository.User;
+import com.example.fitnessfirst.utils.Utils;
 
 
 public class SignUpActivity extends AppCompatActivity {
@@ -56,6 +57,10 @@ public class SignUpActivity extends AppCompatActivity {
             edtEmail.setError("email is empty");
             return false;
         }
+        if(!Utils.validateEmail(edtEmail.getText().toString())){
+            return false;
+        }
+
         if(edtFirstName.getText().toString().isEmpty()){
             edtFirstName.setError("firstName is empty");
             return false;
@@ -66,6 +71,9 @@ public class SignUpActivity extends AppCompatActivity {
         }
         if(edtPassword.getText().toString().isEmpty()||edtPassword.getText().toString().length()<6){
             edtPassword.setError("password is empty");
+            return false;
+        }
+        if( (Utils.validatePassword(edtPassword.getText().toString()))){
             return false;
         }
 

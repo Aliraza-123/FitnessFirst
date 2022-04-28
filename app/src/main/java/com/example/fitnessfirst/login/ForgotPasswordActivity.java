@@ -2,6 +2,7 @@ package com.example.fitnessfirst.login;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,6 +10,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.fitnessfirst.R;
 import com.example.fitnessfirst.databinding.ActivityForgotPasswordBinding;
+import com.example.fitnessfirst.repository.FirebaseDatabaseHelper;
+import com.example.fitnessfirst.repository.User;
+import com.example.fitnessfirst.utils.Utils;
 
 
 public class ForgotPasswordActivity extends AppCompatActivity {
@@ -21,11 +25,36 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = ActivityForgotPasswordBinding.inflate(getLayoutInflater());
+        binding.btnResetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(validation()){
+                    FirebaseDatabaseHelper.resetPassword(binding.edtEmail.getText().toString().trim());
+
+                }
+
+            }
+        });
+
         setContentView(binding.getRoot());
 
 //        setupToolbar();
 
 
+    }
+
+    private boolean validation(){
+        if(binding.edtEmail.getText().toString().isEmpty()){
+            binding.edtEmail.setError("email is empty");
+            return false;
+        }
+        if(!Utils.validateEmail(binding.edtEmail.getText().toString())){
+            binding.edtEmail.setError("email is not correct");
+            return false;
+        }
+
+
+        return true;
     }
     private void setupToolbar() {
 
