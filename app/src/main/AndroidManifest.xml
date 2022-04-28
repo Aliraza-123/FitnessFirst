@@ -10,7 +10,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessFirst">
         <activity
-            android:name=".MainActivity"
+            android:name=".home.ui.exercise.activities.ShouldersExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.ui.exercise.activities.LegsExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.ui.exercise.activities.CoreExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.ui.exercise.activities.ArmsExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.ui.exercise.activities.BackExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.ui.exercise.activities.ChestExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.ForgotPasswordActivity"
+            android:exported="false"
+            android:label="@string/title_activity_forgot_password"
+            android:theme="@style/Theme.FitnessFirst.NoActionBar" />
+        <activity
+            android:name=".home.HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoadingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

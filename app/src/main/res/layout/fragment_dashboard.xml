@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layout_weight="0"
+    tools:context=".home.ui.exercise.ExerciseFragment">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center"
+           android:layout_marginBottom="50dp"
+           android:orientation="vertical">
+           <TextView
+               android:id="@+id/textView3"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Muscle Group"
+               android:textColor="@color/blue"
+               android:textSize="21sp"
+               android:textStyle="bold"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               android:weightSum="9"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp"
+                   android:layout_weight="3"
+                   android:orientation="horizontal"
+                   android:padding="20dp"
+                   android:weightSum="1">
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/crd_chest"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight=".5"
+                       app:cardCornerRadius="4dp"
+                       app:cardUseCompatPadding="true">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:gravity="center">
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Chest" />
+
+                       </LinearLayout>
+
+                   </androidx.cardview.widget.CardView>
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/crd_back"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight=".5"
+                       app:cardCornerRadius="4dp"
+                       app:cardUseCompatPadding="true">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:gravity="center">
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Back" />
+
+                       </LinearLayout>
+
+                   </androidx.cardview.widget.CardView>
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp"
+                   android:layout_weight="3"
+                   android:orientation="horizontal"
+                   android:padding="20dp"
+                   android:weightSum="1">
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/crd_arms"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight=".5"
+                       app:cardCornerRadius="4dp"
+                       app:cardUseCompatPadding="true">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:gravity="center">
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Arms" />
+
+                       </LinearLayout>
+
+                   </androidx.cardview.widget.CardView>
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/crd_core"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight=".5"
+                       app:cardCornerRadius="4dp"
+                       app:cardUseCompatPadding="true">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:gravity="center">
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Core" />
+
+                       </LinearLayout>
+
+                   </androidx.cardview.widget.CardView>
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp"
+                   android:layout_weight="3"
+                   android:orientation="horizontal"
+                   android:padding="20dp"
+                   android:weightSum="1">
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/crd_legs"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight=".5"
+                       app:cardCornerRadius="4dp"
+                       app:cardUseCompatPadding="true">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:gravity="center">
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="legs" />
+
+                       </LinearLayout>
+
+                   </androidx.cardview.widget.CardView>
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/crd_shoulder"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight=".5"
+                       app:cardCornerRadius="4dp"
+                       app:cardUseCompatPadding="true">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:gravity="center">
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Shoulders" />
+
+                       </LinearLayout>
+
+                   </androidx.cardview.widget.CardView>
+               </LinearLayout>
+
+
+           </LinearLayout>
+
+
+       </LinearLayout>
+
+
+
+
+</ScrollView>

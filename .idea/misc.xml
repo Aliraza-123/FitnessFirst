@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/lenovo/.gradle/caches/transforms-3/f791586eb8e3cddcf33fb36842d7675a/transformed/appcompat-1.4.1/res/drawable/abc_ic_ab_back_material.xml" value="0.1325" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/drawable/rectangle_border_fill.xml" value="0.2225" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_arms_exercise.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_back_exercise.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_chest_exercise.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_core_exercise.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_forgot_password.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_home.xml" value="0.215625" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_legs_exercise.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_loading.xml" value="0.2" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_main.xml" value="0.215625" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_shoulders_exercise.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/activity_signup.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/content_forgot_password.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/fragment_dashboard.xml" value="0.215625" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/fragment_home.xml" value="0.215625" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/fragment_notifications.xml" value="0.18840579710144928" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/fragment_todo.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/layout/item_todo.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/FitnessFirst/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18020833333333333" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
