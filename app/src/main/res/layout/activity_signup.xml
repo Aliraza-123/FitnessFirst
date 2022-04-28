@@ -112,7 +112,7 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:backgroundTint="@color/blue"
-            android:text="Sign in" />
+            android:text="Sign up" />
 
         <LinearLayout
             android:layout_marginTop="10dp"

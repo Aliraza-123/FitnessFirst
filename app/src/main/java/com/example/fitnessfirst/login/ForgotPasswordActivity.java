@@ -1,5 +1,6 @@
 package com.example.fitnessfirst.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -17,7 +18,6 @@ import com.example.fitnessfirst.utils.Utils;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
     private ActivityForgotPasswordBinding binding;
 
     @Override
@@ -29,16 +29,25 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validation()){
-                    FirebaseDatabaseHelper.resetPassword(binding.edtEmail.getText().toString().trim());
+                    if(FirebaseDatabaseHelper.resetPassword(binding.edtEmail.getText().toString().trim())){
+                        Toast.makeText(ForgotPasswordActivity.this, "Link is sent to your email", Toast.LENGTH_SHORT).show();
+                    }
+
 
                 }
 
             }
         });
+        binding.txtSignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(ForgotPasswordActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         setContentView(binding.getRoot());
 
-//        setupToolbar();
 
 
     }

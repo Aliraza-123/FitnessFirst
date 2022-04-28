@@ -65,8 +65,10 @@
             android:text="Email" />
 
         <EditText
+            android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:padding="10dp"
             android:background="@drawable/edittext_border" />
 
 
@@ -78,8 +80,10 @@
             android:text="Password" />
 
         <EditText
+            android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:padding="10dp"
             android:background="@drawable/edittext_border"
             android:inputType="textPassword" />
 

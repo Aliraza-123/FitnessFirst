@@ -1,5 +1,6 @@
 package com.example.fitnessfirst.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,12 +37,19 @@ public class SignUpActivity extends AppCompatActivity {
                     user.setFirstName(edtFirstName.getText().toString().trim());
                     user.setLastName(edtLastName.getText().toString().trim());
                     user.setPassword(edtPassword.getText().toString().trim());
-                    FirebaseDatabaseHelper.createUser(user,null);
+                    if( FirebaseDatabaseHelper.createUser(user,null)){
+                        Intent intent =  new Intent(SignUpActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(SignUpActivity.this, "Some issue!!", Toast.LENGTH_SHORT).show();
+
+                    }
+
                 }
 
             }
         });
-
 
     }
     private void init(){
