@@ -9,15 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.example.fitnessfirst.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name="com.example.fitnessfirst.home.ui.exercise.activities.ShouldersExerciseActivity"
             android:exported="false" />
+
         <activity
             android:name="com.example.fitnessfirst.home.ui.exercise.activities.LegsExerciseActivity"
             android:exported="false" />
+
         <activity
             android:name="com.example.fitnessfirst.home.ui.exercise.activities.CoreExerciseActivity"
             android:exported="false" />
+
         <activity
             android:name="com.example.fitnessfirst.home.ui.exercise.activities.ArmsExerciseActivity"
             android:exported="false" />
@@ -27,29 +41,25 @@
         <activity
             android:name="com.example.fitnessfirst.home.ui.exercise.activities.ChestExerciseActivity"
             android:exported="false" />
+
         <activity
             android:name="com.example.fitnessfirst.login.ForgotPasswordActivity"
             android:exported="false"
             android:label="@string/title_activity_forgot_password" />
+
         <activity
             android:name="com.example.fitnessfirst.home.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home" />
+
         <activity
             android:name="com.example.fitnessfirst.login.LoginActivity"
             android:exported="false" />
+
         <activity
             android:name="com.example.fitnessfirst.login.SignUpActivity"
             android:exported="false" />
-        <activity
-            android:name="com.example.fitnessfirst.LoadingActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
