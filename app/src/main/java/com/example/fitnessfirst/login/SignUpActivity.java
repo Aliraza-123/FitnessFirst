@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.fitnessfirst.R;
+import com.example.fitnessfirst.repository.FirebaseDatabaseHelper;
+import com.example.fitnessfirst.repository.User;
 
 
 public class SignUpActivity extends AppCompatActivity {
@@ -28,7 +30,12 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validation()){
-                    Toast.makeText(SignUpActivity.this, "validation true", Toast.LENGTH_SHORT).show();
+                    User user =  new User();
+                    user.setEmailAddress(edtEmail.getText().toString().trim());
+                    user.setFirstName(edtFirstName.getText().toString().trim());
+                    user.setLastName(edtLastName.getText().toString().trim());
+                    user.setPassword(edtPassword.getText().toString().trim());
+                    FirebaseDatabaseHelper.createUser(user,null);
                 }
 
             }
@@ -57,10 +64,11 @@ public class SignUpActivity extends AppCompatActivity {
             edtLastName.setError("lastName is empty");
             return false;
         }
-        if(edtPassword.getText().toString().isEmpty()){
+        if(edtPassword.getText().toString().isEmpty()||edtPassword.getText().toString().length()<6){
             edtPassword.setError("password is empty");
             return false;
         }
+
         if(edtConfirmPassword.getText().toString().isEmpty()){
             edtConfirmPassword.setError("confirm password is empty");
             return false;
