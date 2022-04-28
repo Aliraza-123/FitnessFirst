@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+
 import com.example.fitnessfirst.R;
 import com.example.fitnessfirst.home.HomeActivity;
 

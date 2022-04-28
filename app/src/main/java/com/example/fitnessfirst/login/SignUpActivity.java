@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.fitnessfirst.R;
 
+
 public class SignUpActivity extends AppCompatActivity {
 
     @Override

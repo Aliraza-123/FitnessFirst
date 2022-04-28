@@ -10,6 +10,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import com.example.fitnessfirst.R;
 import com.example.fitnessfirst.databinding.ActivityForgotPasswordBinding;
 
+
 public class ForgotPasswordActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
