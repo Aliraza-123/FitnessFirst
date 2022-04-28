@@ -37,12 +37,11 @@
 
     <TextView
         android:id="@+id/textView2"
+        style="@style/HeadingTextTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/HeadingTextTheme"
-        android:text="Login"
-        android:textColor="@color/blue"
         android:layout_marginTop="32dp"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headingView" />
@@ -51,7 +50,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
@@ -63,8 +61,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="50dp"
+            android:layout_gravity="start"
             android:text="Email" />
 
         <EditText
@@ -76,7 +73,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="start"
             android:layout_marginTop="10dp"
             android:text="Password" />
 
@@ -89,13 +86,11 @@
 
         <Button
             android:id="@+id/btn_login"
+            style="@style/BlueButtonTheme"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="30dp"
-            android:backgroundTint="@color/blue"
-            android:text="login"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:text="Login" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -107,13 +102,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dont have an account?" />
+                android:text="Don't have an account?" />
 
             <TextView
                 android:id="@+id/txt_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:text="Sign up" />
 
         </LinearLayout>
@@ -150,12 +145,10 @@
 
         <Button
             android:id="@+id/btn_fpass"
+            style="@style/WhiteButtonTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/rectangle_border_fill"
-            android:backgroundTint="@color/white"
-
             android:text="I FORGOT MY PASSWORD" />
 
 
