@@ -67,7 +67,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/rectangle_border_fill" />
+            android:background="@drawable/edittext_border" />
 
 
         <TextView
@@ -80,7 +80,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/rectangle_border_fill"
+            android:background="@drawable/edittext_border"
             android:inputType="textPassword" />
 
 

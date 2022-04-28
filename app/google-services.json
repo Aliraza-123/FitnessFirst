@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "381658623269",
+    "project_id": "fitnessfirst-52781",
+    "storage_bucket": "fitnessfirst-52781.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381658623269:android:1a64194e24256e7f8dfecc",
+        "android_client_info": {
+          "package_name": "com.example.fitnessfirst"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381658623269-paebk6tma4dakboskdbu58t7dp4ip3ke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD_cgrmGYKlG-WWNYVq8F-njM93CmhAqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381658623269-paebk6tma4dakboskdbu58t7dp4ip3ke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

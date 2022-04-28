@@ -21,7 +21,7 @@
              android:padding="10dp"
              android:hint="input task"
              android:layout_height="40dp"
-             android:background="@drawable/rectangle_border_fill"
+             android:background="@drawable/edittext_border"
              />
          <Button
              android:layout_marginLeft="10dp"
@@ -43,26 +43,29 @@
          android:padding="10dp"
          android:orientation="horizontal"
          android:weightSum="9">
+
          <Button
              android:layout_width="0dp"
              android:layout_weight="3"
              android:layout_height="40dp"
              android:text="Save"
-             android:background="@drawable/rectangle_border_fill" />
+             android:background="@drawable/edittext_border" />
+
          <Button
              android:layout_marginLeft="10dp"
              android:layout_width="0dp"
              android:layout_weight="3"
              android:text="Share"
              android:layout_height="40dp"
-             android:background="@drawable/rectangle_border_fill" />
+             android:background="@drawable/edittext_border" />
+
          <Button
              android:layout_marginLeft="10dp"
              android:layout_width="0dp"
              android:layout_weight="3"
              android:text="Clear"
              android:layout_height="40dp"
-             android:background="@drawable/rectangle_border_fill" />
+             android:background="@drawable/edittext_border" />
 
      </LinearLayout>
 
