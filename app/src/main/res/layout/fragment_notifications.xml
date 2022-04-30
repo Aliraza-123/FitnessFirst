@@ -46,9 +46,10 @@
                 android:text="195"/>
 
             <SeekBar
-                android:id="@+id/seekBar"
+                android:id="@+id/h_seek_bar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:max="200"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -80,6 +81,7 @@
                 android:text="95"/>
 
             <SeekBar
+                android:id="@+id/w_seek_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
