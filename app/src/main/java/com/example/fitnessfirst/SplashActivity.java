@@ -13,9 +13,11 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessfirst.home.HomeActivity;
+import com.example.fitnessfirst.login.GetStartedActivity;
 import com.example.fitnessfirst.login.LoginActivity;
 import com.example.fitnessfirst.repository.CurrentDatabase;
 import com.example.fitnessfirst.repository.FirebaseDatabaseHelper;
+import com.example.fitnessfirst.repository.User;
 import com.example.fitnessfirst.utils.NetworkStateReceiver;
 import com.example.fitnessfirst.utils.Utils;
 import com.google.android.material.snackbar.Snackbar;
@@ -72,18 +74,21 @@ public class SplashActivity extends AppCompatActivity implements NetworkStateRec
 
             String isLogin = Utils.getDataFromSharedPrefs(getApplicationContext(), "is_login");
 
-            if (!TextUtils.isEmpty(isLogin)) {
-                findViewById(R.id.btn_started).setVisibility(View.VISIBLE);
-                findViewById(R.id.btn_started).setOnClickListener(view
-                        -> startActivity(new Intent(getApplicationContext(), LoginActivity.class)));
+            if (TextUtils.isEmpty(isLogin)) {
+                startActivity(new Intent(getApplicationContext(), GetStartedActivity.class));
             } else {
                 String email = Utils.getDataFromSharedPrefs(getApplicationContext(), "email");
-                CurrentDatabase.setCurrentPublicUser(FirebaseDatabaseHelper.getUserByEmail(email));
-                startActivity(new Intent(this, HomeActivity.class));
+                User user = FirebaseDatabaseHelper.getUserByEmail(email);
+                if (user != null) {
+                    CurrentDatabase.setCurrentPublicUser(FirebaseDatabaseHelper.getUserByEmail(email));
+                    startActivity(new Intent(this, HomeActivity.class));
+                } else {
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                }
             }
             finish();
 
-        }, 4000);
+        }, 3000);
     }
 
     @Override

@@ -5,13 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.fitnessfirst.databinding.FragmentNotificationsBinding;
+import com.example.fitnessfirst.databinding.FragmentBmiBinding;
 
 
 public class BmiFragment extends Fragment {
@@ -19,13 +18,13 @@ public class BmiFragment extends Fragment {
     private SeekBar hSeekBar,wSeekBar;
     private int value;
 
-    private FragmentNotificationsBinding binding;
+    private FragmentBmiBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         NotificationsViewModel notificationsViewModel =
                 new ViewModelProvider(this).get(NotificationsViewModel.class);
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentBmiBinding.inflate(inflater, container, false);
 
         binding.hSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

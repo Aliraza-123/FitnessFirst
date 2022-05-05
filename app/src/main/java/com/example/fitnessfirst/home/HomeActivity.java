@@ -1,22 +1,28 @@
 package com.example.fitnessfirst.home;
 
 import android.os.Bundle;
-import android.view.View;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.fragment.app.Fragment;
 
 import com.example.fitnessfirst.R;
 import com.example.fitnessfirst.databinding.ActivityHomeBinding;
+import com.example.fitnessfirst.home.ui.bmi.BmiFragment;
+import com.example.fitnessfirst.home.ui.exercise.ExerciseFragment;
+import com.example.fitnessfirst.home.ui.home.HomeFragment;
+import com.example.fitnessfirst.home.ui.todo.TodoFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private ActivityHomeBinding binding;
+
+    private HomeFragment homeFragment;
+    private ExerciseFragment exerciseFragment;
+    private BmiFragment bmiFragment;
+    private TodoFragment todoFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,32 +30,62 @@ public class HomeActivity extends AppCompatActivity {
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setupToolbar();
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_todo)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_home);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+
+
+        homeFragment = new HomeFragment();
+        exerciseFragment = new ExerciseFragment();
+        bmiFragment = new BmiFragment();
+        todoFragment = new TodoFragment();
+
+        loadFragment(homeFragment);
+
+        //getting bottom navigation view and attaching the listener
+        BottomNavigationView navigation = findViewById(R.id.nav_view);
+        navigation.setOnNavigationItemSelectedListener(this);
+
 
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
 
-    private void setupToolbar() {
+        switch (item.getItemId()) {
+            case R.id.navigation_home:
+                fragment = homeFragment;
+                break;
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+            case R.id.navigation_exercise:
+                fragment = exerciseFragment;
+                break;
 
-        toolbar.setNavigationIcon(androidx.appcompat.R.drawable.abc_ic_ab_back_material);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+            case R.id.navigation_bmi:
+                fragment = bmiFragment;
+                break;
+
+            case R.id.navigation_todo:
+                fragment = todoFragment;
+                break;
+
+        }
+        return loadFragment(fragment);
     }
 
+    /**
+     * Loads the fragment
+     *
+     * @param fragment the Fragment
+     * @return returns true if the fragment is loaded successfully.
+     */
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.nav_host_fragment_activity_home, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
 }
