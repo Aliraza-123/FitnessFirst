@@ -15,7 +15,7 @@ import java.util.List;
 public interface ExEssentialDao {
 
     @Insert
-    void insertEssentialDao(ExerciseEssentials exerciseEssentials);
+    void insertEssentials(ExerciseEssentials exerciseEssentials);
 
     @Update
     void updateEssentials(ExerciseEssentials exerciseEssentials);
