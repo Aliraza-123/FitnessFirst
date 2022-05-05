@@ -6,10 +6,12 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.fitnessfirst.data.local.dao.ExEssentialDao;
 import com.example.fitnessfirst.data.local.dao.TodoTaskDao;
+import com.example.fitnessfirst.data.local.entities.ExerciseEssentials;
 import com.example.fitnessfirst.data.local.entities.TodoTask;
 
-@Database(entities = {TodoTask.class}, version = 1)
+@Database(entities = {TodoTask.class, ExerciseEssentials.class}, version = 2)
 public abstract class TodoDatabase extends RoomDatabase {
 
     private static TodoDatabase instance;
@@ -25,4 +27,6 @@ public abstract class TodoDatabase extends RoomDatabase {
     }
 
     public abstract TodoTaskDao todoTaskDao();
+
+    public abstract ExEssentialDao exEssentialDao();
 }

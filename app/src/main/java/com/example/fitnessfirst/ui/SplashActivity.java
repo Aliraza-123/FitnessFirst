@@ -13,6 +13,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessfirst.R;
+import com.example.fitnessfirst.data.local.Repository;
+import com.example.fitnessfirst.data.local.entities.ExerciseEssentials;
 import com.example.fitnessfirst.data.remote.CurrentDatabase;
 import com.example.fitnessfirst.data.remote.FirebaseDatabaseHelper;
 import com.example.fitnessfirst.data.remote.models.User;
@@ -71,6 +73,9 @@ public class SplashActivity extends AppCompatActivity implements NetworkStateRec
          * Showing splash screen with a timer. This will be useful when you
          * want to show case your app logo / company
          */
+
+        firstDbSetup();
+
         new Handler().postDelayed(() -> {
 
             String isLogin = Utils.getDataFromSharedPrefs(getApplicationContext(), "is_login");
@@ -90,6 +95,27 @@ public class SplashActivity extends AppCompatActivity implements NetworkStateRec
             finish();
 
         }, 3000);
+    }
+
+    private void firstDbSetup() {
+
+        String isFirstLaunch = Utils.getDataFromSharedPrefs(getApplicationContext(), "FIRST");
+        if (isFirstLaunch.isEmpty()) {
+            Repository repository = new Repository(getApplication());
+            repository.insertExEssentials(new ExerciseEssentials("Sneakers", "Please don't assume that any old footwear will be efficient for the gym. Please ensure that you purchase/have trainers that are fit for your workouts and fit your feet well. Ensuring they have a combination of support, cushioning and grip."));
+            repository.insertExEssentials(new ExerciseEssentials("Headphones", "Headphones are an integral gym essential, get headphones and listen to music that will motivate you. Music can also be utilised to help with your focus and eliminate distractions, which could help you to set a potential personal best or to grind out a routine you find tough."));
+            repository.insertExEssentials(new ExerciseEssentials("Reusable Water Bottle", "Staying hydrated is very essential during workouts, using reusable bottles is not only better for the environment and it can also keep your water colder for longer periods of time."));
+            repository.insertExEssentials(new ExerciseEssentials("Gym Clothes", "Gym clothes are essential because they can help prevent injury, for example tighter clothing can restrict movement and increases the risks of injuries. In addition, gym clothing can help with preventing overheating as there are many gym clothes which help with sweat. Finally, gym clothes gives you the confidence in the gym. (Looking your best, makes you perform your best)."));
+            repository.insertExEssentials(new ExerciseEssentials("Dry Shampoo", "Dry Shampoo is quite useful because it can reduce your after exercise changing room time, as it provides a waterless method to refresh your hair. It can be used to absorb sweat and excess oil in hair as well as to repel any odours that come from a gym workout."));
+            repository.insertExEssentials(new ExerciseEssentials("Shower Essentials", "Shower essentials could include shower gel, body cream, towel and shampoo. These products are helpful in order to keep clean and fresh post exercise."));
+            repository.insertExEssentials(new ExerciseEssentials("Deoderant ", "Deoderant can help you stay fresh or reduce odours pre/post gym routine. "));
+            repository.insertExEssentials(new ExerciseEssentials("Padlocks", "Padlocks are used in order to keep your things safe within gym lockers. Keep a gym padlock and the code somewhere safe."));
+            repository.insertExEssentials(new ExerciseEssentials("Weight Lifting Gloves", "Weight Lifting Gloves will help you because it can protect your fingers from stress and can possibly reduce amount of calluses, it can also help you with gripping the weight better."));
+            repository.insertExEssentials(new ExerciseEssentials("Weight Lifting Belt", "Weightlifting belts are an essential to gym-going because it can help reduce stress on the lower back while you are lifting in an upright position, these exercises could be deadlifting, squatting etc. "));
+
+
+            Utils.saveDataInSharedPrefs(getApplicationContext(), "FIRST", "true");
+        }
     }
 
     @Override

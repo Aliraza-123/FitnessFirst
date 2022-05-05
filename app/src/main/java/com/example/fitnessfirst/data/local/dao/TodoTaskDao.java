@@ -21,7 +21,7 @@ public interface TodoTaskDao {
     void updateTodo(TodoTask transaction);
 
     @Delete
-    void deleteTodo(TodoTask user);
+    void deleteTodo(TodoTask todoTask);
 
     @Query("DELETE FROM todo_tasks")
     void deleteAllTodos();
