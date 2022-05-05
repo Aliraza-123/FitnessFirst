@@ -18,7 +18,7 @@ import com.example.fitnessfirst.utils.Utils;
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edtEmail, edtFirstName, edtLastName, edtPassword, edtConfirmPassword;
-    private Button btnLogin;
+    private Button btnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +40,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         edtConfirmPassword = findViewById(R.id.edt_confirm_password);
 
-        btnLogin = findViewById(R.id.btn_login);
-        btnLogin.setOnClickListener(this);
+        btnSignUp = findViewById(R.id.btn_signUp);
+        btnSignUp.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if (view == btnLogin) {
+        if (view == btnSignUp) {
 
             String email = edtEmail.getText().toString();
             String password = edtPassword.getText().toString();
@@ -58,6 +58,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 edtEmail.setError("Email is empty");
                 return;
             }
+
             if (!Utils.validateEmail(email)) {
                 edtEmail.setError("Invalid Email");
                 return;

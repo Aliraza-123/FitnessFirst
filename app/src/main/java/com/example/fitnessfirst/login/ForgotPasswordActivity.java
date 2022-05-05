@@ -3,16 +3,12 @@ package com.example.fitnessfirst.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.fitnessfirst.R;
 import com.example.fitnessfirst.databinding.ActivityForgotPasswordBinding;
-import com.example.fitnessfirst.repository.FirebaseDatabaseHelper;
-import com.example.fitnessfirst.repository.User;
 import com.example.fitnessfirst.utils.Utils;
 
 
@@ -29,12 +25,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validation()){
-                    if(FirebaseDatabaseHelper.resetPassword(binding.edtEmail.getText().toString().trim())){
-                        Toast.makeText(ForgotPasswordActivity.this, "Link is sent to your email", Toast.LENGTH_SHORT).show();
-                        Intent intent =  new Intent(ForgotPasswordActivity.this,LoginActivity.class);
-                        startActivity(intent);
-
-                    }
+//                    if(FirebaseDatabaseHelper.resetPassword(binding.edtEmail.getText().toString().trim())){
+//                        Toast.makeText(ForgotPasswordActivity.this, "Link is sent to your email", Toast.LENGTH_SHORT).show();
+//                        Intent intent =  new Intent(ForgotPasswordActivity.this,LoginActivity.class);
+//                        startActivity(intent);
+//
+//                    }
 
 
                 }

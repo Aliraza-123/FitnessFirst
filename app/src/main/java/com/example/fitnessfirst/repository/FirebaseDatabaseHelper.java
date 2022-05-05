@@ -8,17 +8,13 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.fitnessfirst.home.HomeActivity;
-import com.example.fitnessfirst.login.LoginActivity;
 import com.example.fitnessfirst.utils.Utils;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -95,12 +91,7 @@ public class FirebaseDatabaseHelper {
                         });
                     } else Log.e(TAG, task.getException().toString());
                 });
-        if(signupSuccessfull){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return signupSuccessfull;
     }
 
     public static User getUserByEmail(String email) {
@@ -146,17 +137,17 @@ public class FirebaseDatabaseHelper {
     /* *********************************** Firebase authentications ********************************** */
 
 
-   public static boolean loginUser(String email, String password, Context context){
+    public static void loginUser(String email, String password, Context context) {
 
 
-       firebaseAuth.signInWithEmailAndPassword( email, password).
-       addOnCompleteListener(task -> {
-           if (task.isSuccessful()) {
-               Log.e(TAG, "Auth Created");
+        firebaseAuth.signInWithEmailAndPassword(email, password).
+                addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.e(TAG, "Auth Created");
 
-               Map<String,Object> userMap = new HashMap<String,Object>();
-               userMap.put("password", password);
-               publicUserEndPoint.child(firebaseAuth.getCurrentUser().getUid()).
+                        Map<String, Object> userMap = new HashMap<String, Object>();
+                        userMap.put("password", password);
+                        publicUserEndPoint.child(firebaseAuth.getCurrentUser().getUid()).
                        updateChildren(userMap).addOnCompleteListener(task1 -> {
                    if (task1.isSuccessful()) {
                        Intent intent =  new Intent(context, HomeActivity.class);
@@ -170,37 +161,15 @@ public class FirebaseDatabaseHelper {
                });
            } else Log.e(TAG, task.getException().toString());
        });
-       if(loginSuccessfull){
-           return true;
-       }
-       else{
-           return false;
-
-       }
-
-
-
    }
 
-    public static boolean resetPassword(String email){
+    public static void resetPassword(String email) {
         firebaseAuth.sendPasswordResetEmail(email)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            passwordResetSuccessfull =  true;
-                        }
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        passwordResetSuccessfull = true;
                     }
                 });
-        if(passwordResetSuccessfull){
-            return true;
-        }
-        else{
-            return false;
-
-        }
-
-
     }
 
     ///////////////////////////////////////// HELPER METHODS ///////////////////////////////////////////////////////
