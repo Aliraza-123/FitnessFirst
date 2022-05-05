@@ -11,4 +11,7 @@
     <string name="email_hint">Email Address</string>
     <string name="title_bmi_calculator">BMI Calculator</string>
     <string name="title_exercise">Exercise</string>
+    <string name="height">Height</string>
+    <string name="weight_kg">Weight(kg)</string>
+    <string name="result">Result</string>
 </resources>

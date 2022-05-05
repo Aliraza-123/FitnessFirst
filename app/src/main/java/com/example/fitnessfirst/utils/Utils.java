@@ -140,4 +140,8 @@ public class Utils {
     public static void showToast(Context context, String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
+
+    public static double round(double bmi) {
+        return Math.round(bmi * 100.0) / 100.0;
+    }
 }
