@@ -7,17 +7,19 @@
     android:orientation="horizontal"
     android:gravity="center"
     android:weightSum="1"
-    tools:context=".home.ui.exercise.activities.ShouldersExerciseActivity">
-   <LinearLayout
-       android:layout_weight=".5"
-       android:layout_width="0dp"
-       android:padding="10dp"
-       android:layout_height="match_parent"
-       android:background="@color/blue">
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="21sp"
+    tools:context=".ui.home.ui.exercise.activities.ShouldersExerciseActivity">
+
+    <LinearLayout
+        android:layout_weight=".5"
+        android:layout_width="0dp"
+        android:padding="10dp"
+        android:layout_height="match_parent"
+        android:background="@color/blue">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="21sp"
            android:textColor="@color/white"
            android:textStyle="bold"
            android:text="Exercise and instructions"/>

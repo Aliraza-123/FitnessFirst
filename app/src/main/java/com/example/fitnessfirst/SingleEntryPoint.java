@@ -3,7 +3,7 @@ package com.example.fitnessfirst;
 import android.app.Application;
 import android.content.Context;
 
-import com.example.fitnessfirst.repository.FirebaseDatabaseHelper;
+import com.example.fitnessfirst.data.remote.FirebaseDatabaseHelper;
 import com.google.firebase.FirebaseApp;
 
 

@@ -19,6 +19,12 @@ import java.util.regex.Pattern;
  */
 public class Utils {
 
+
+    public static final int INSERT = 22;
+    public static final int UPDATE = 33;
+    public static final int DELETE = 44;
+    public static final int DELETE_ALL = 55;
+
     /**
      * The constant PUBLIC_USER_TYPE.
      */

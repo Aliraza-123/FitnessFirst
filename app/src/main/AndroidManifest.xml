@@ -17,10 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".login.GetStartedActivity"
+            android:name=".ui.login.GetStartedActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,36 +29,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".home.ui.exercise.activities.ShouldersExerciseActivity"
+            android:name=".ui.home.ui.exercise.activities.ShouldersExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".home.ui.exercise.activities.LegsExerciseActivity"
+            android:name=".ui.home.ui.exercise.activities.LegsExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".home.ui.exercise.activities.CoreExerciseActivity"
+            android:name=".ui.home.ui.exercise.activities.CoreExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".home.ui.exercise.activities.ArmsExerciseActivity"
+            android:name=".ui.home.ui.exercise.activities.ArmsExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".home.ui.exercise.activities.BackExerciseActivity"
+            android:name=".ui.home.ui.exercise.activities.BackExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".home.ui.exercise.activities.ChestExerciseActivity"
+            android:name=".ui.home.ui.exercise.activities.ChestExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".login.ForgotPasswordActivity"
-            android:exported="false"
-            android:label="@string/title_activity_forgot_password" />
-        <activity
-            android:name=".home.HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home" />
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".login.SignUpActivity"
+            android:name=".ui.login.SignUpActivity"
             android:exported="false" />
 
         <receiver
