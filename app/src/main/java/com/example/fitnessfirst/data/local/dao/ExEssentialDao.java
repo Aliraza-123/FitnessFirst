@@ -26,4 +26,7 @@ public interface ExEssentialDao {
     @Query("SELECT * FROM exercise_essentials ORDER BY ex_essential_id ASC")
     LiveData<List<ExerciseEssentials>> getAllEssentials();
 
+    @Query("DELETE FROM exercise_essentials")
+    void deleteAllEssentials();
+
 }
