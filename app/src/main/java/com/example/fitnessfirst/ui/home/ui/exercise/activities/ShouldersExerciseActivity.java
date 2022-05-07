@@ -33,7 +33,7 @@ public class ShouldersExerciseActivity extends AppCompatActivity implements Obse
         recyclerView.setAdapter(exerciseAdapter);
 
         repository = new Repository(getApplication());
-        repository.getGetShoulderExercises().observe(this, this);
+        repository.shoulderExercises().observe(this, this);
     }
 
     @Override

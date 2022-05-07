@@ -15,7 +15,7 @@ import com.example.fitnessfirst.utils.Utils;
 
 import java.util.List;
 
-public class RepositoryJava {
+public class Repository {
 
     private final TodoTaskDao todoTaskDao;
     private final ExEssentialDao exEssentialDao;
@@ -24,7 +24,7 @@ public class RepositoryJava {
     private final LiveData<List<TodoTask>> allTodoTasks;
     private final LiveData<List<ExerciseEssentials>> allExerciseEssentials;
 
-    public RepositoryJava(Application application) {
+    public Repository(Application application) {
         TodoDatabase database = TodoDatabase.getInstance(application);
         todoTaskDao = database.todoTaskDao();
         exEssentialDao = database.exEssentialDao();
@@ -33,7 +33,6 @@ public class RepositoryJava {
         allTodoTasks = todoTaskDao.getAllTodoTasks();
         allExerciseEssentials = exEssentialDao.getAllEssentials();
     }
-
 
     public void insertTodoTask(TodoTask todoTask) {
         new TodoAsyncTask(todoTaskDao, Utils.INSERT).execute(todoTask);
@@ -46,6 +45,11 @@ public class RepositoryJava {
     public void deleteTodoTask(TodoTask todoTask) {
         new TodoAsyncTask(todoTaskDao, Utils.DELETE).execute(todoTask);
     }
+
+    public void deleteAllTodos() {
+        new TodoAsyncTask(todoTaskDao, Utils.DELETE_ALL).execute();
+    }
+
 
     public LiveData<List<TodoTask>> getAllTodoTasks() {
         return allTodoTasks;

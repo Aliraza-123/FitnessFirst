@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment implements Observer<List<ExerciseEsse
         recyclerView.setAdapter(exEssentialAdapter);
 
         repository = new Repository(getActivity().getApplication());
-        repository.getAllExEssentials().observe(getViewLifecycleOwner(), this);
+        repository.getAllExerciseEssentials().observe(getViewLifecycleOwner(), this);
         return root;
     }
 

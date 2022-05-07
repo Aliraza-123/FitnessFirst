@@ -33,7 +33,7 @@ public class ArmsExerciseActivity extends AppCompatActivity implements Observer<
         recyclerView.setAdapter(exerciseAdapter);
 
         repository = new Repository(getApplication());
-        repository.getArmsExercises().observe(this, this);
+        repository.armsExercises().observe(this, this);
     }
 
     @Override

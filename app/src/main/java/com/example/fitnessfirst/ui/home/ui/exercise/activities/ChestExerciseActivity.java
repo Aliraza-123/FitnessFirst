@@ -33,7 +33,7 @@ public class ChestExerciseActivity extends AppCompatActivity implements Observer
         recyclerView.setAdapter(exerciseAdapter);
 
         repository = new Repository(getApplication());
-        repository.getChestExercises().observe(this, this);
+        repository.chestExercises().observe(this, this);
     }
 
     @Override

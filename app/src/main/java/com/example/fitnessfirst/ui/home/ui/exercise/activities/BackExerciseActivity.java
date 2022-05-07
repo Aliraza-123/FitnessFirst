@@ -33,7 +33,7 @@ public class BackExerciseActivity extends AppCompatActivity implements Observer<
         recyclerView.setAdapter(exerciseAdapter);
 
         repository = new Repository(getApplication());
-        repository.getBackExercises().observe(this, this);
+        repository.backExercises().observe(this, this);
     }
 
     @Override
