@@ -22,6 +22,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * The type Firebase database helper.
+ */
 public class FirebaseDatabaseHelper {
 
     private static final String TAG = "FirebaseDatabaseHelper";
@@ -30,11 +33,14 @@ public class FirebaseDatabaseHelper {
     private static DatabaseReference publicUserEndPoint;
 
     private static ArrayList<User> usersArrayList;
-    private static boolean loginSuccessfull =  false;
-    private static boolean signupSuccessfull =  false;
-    private static boolean passwordResetSuccessfull =  false;
+    private static boolean loginSuccessfull = false;
+    private static boolean signupSuccessfull = false;
+    private static boolean passwordResetSuccessfull = false;
 
 
+    /**
+     * Instantiates a new Firebase database helper.
+     */
     public FirebaseDatabaseHelper() {
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -54,10 +60,21 @@ public class FirebaseDatabaseHelper {
         return users;
     }
 
+    /**
+     * Gets all public users.
+     *
+     * @return the all public users
+     */
     public static ArrayList<User> getAllPublicUsers() {
         return usersArrayList;
     }
 
+    /**
+     * Gets user.
+     *
+     * @param id the id
+     * @return the user
+     */
     public static ArrayList<User> getUser(String id) {
         ArrayList<User> users = new ArrayList<>();
         for (int i = 0; i < usersArrayList.size(); i++) {
@@ -68,6 +85,13 @@ public class FirebaseDatabaseHelper {
         return users;
     }
 
+    /**
+     * Create user boolean.
+     *
+     * @param user the user
+     * @param uri  the uri
+     * @return the boolean
+     */
     /* *********************************** PUBLIC USER CRUD ********************************** */
     public static boolean createUser(final User user, Uri uri) {
         firebaseAuth.createUserWithEmailAndPassword(user.getEmailAddress(), user.getPassword())
@@ -95,6 +119,12 @@ public class FirebaseDatabaseHelper {
         return signupSuccessfull;
     }
 
+    /**
+     * Gets user by email.
+     *
+     * @param email the email
+     * @return the user by email
+     */
     public static User getUserByEmail(String email) {
         for (int i = 0; i < usersArrayList.size(); i++) {
             if (usersArrayList.get(i).getEmailAddress().equals(email))
@@ -103,6 +133,11 @@ public class FirebaseDatabaseHelper {
         return null;
     }
 
+    /**
+     * Update user.
+     *
+     * @param user the user
+     */
     public static void updateUser(final User user) {
         publicUserEndPoint.child(user.getUserId()).
                 setValue(user).addOnCompleteListener(task -> {
@@ -115,6 +150,12 @@ public class FirebaseDatabaseHelper {
         });
     }
 
+    /**
+     * Delete user boolean.
+     *
+     * @param user the user
+     * @return the boolean
+     */
     public static boolean deleteUser(final User user) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.signInWithEmailAndPassword(user.getEmailAddress(),
@@ -138,6 +179,13 @@ public class FirebaseDatabaseHelper {
     /* *********************************** Firebase authentications ********************************** */
 
 
+    /**
+     * Login user.
+     *
+     * @param email    the email
+     * @param password the password
+     * @param context  the context
+     */
     public static void loginUser(String email, String password, Context context) {
 
 
@@ -149,21 +197,26 @@ public class FirebaseDatabaseHelper {
                         Map<String, Object> userMap = new HashMap<String, Object>();
                         userMap.put("password", password);
                         publicUserEndPoint.child(firebaseAuth.getCurrentUser().getUid()).
-                       updateChildren(userMap).addOnCompleteListener(task1 -> {
-                   if (task1.isSuccessful()) {
-                       Intent intent =  new Intent(context, HomeActivity.class);
-                       context.startActivity(intent);
-                       loginSuccessfull =  true;
-                       Log.e(TAG, "User Login entry created");
-                   } else {
-                       Log.e(TAG, task1.getException().toString());
-                       Objects.requireNonNull(firebaseAuth.getCurrentUser()).delete();
-                   }
-               });
-           } else Log.e(TAG, task.getException().toString());
-       });
-   }
+                                updateChildren(userMap).addOnCompleteListener(task1 -> {
+                            if (task1.isSuccessful()) {
+                                Intent intent =  new Intent(context, HomeActivity.class);
+                                context.startActivity(intent);
+                                loginSuccessfull =  true;
+                                Log.e(TAG, "User Login entry created");
+                            } else {
+                                Log.e(TAG, task1.getException().toString());
+                                Objects.requireNonNull(firebaseAuth.getCurrentUser()).delete();
+                            }
+                        });
+                    } else Log.e(TAG, task.getException().toString());
+                });
+    }
 
+    /**
+     * Reset password.
+     *
+     * @param email the email
+     */
     public static void resetPassword(String email) {
         firebaseAuth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(task -> {
@@ -201,7 +254,15 @@ public class FirebaseDatabaseHelper {
         }
     }
 
+    /**
+     * The interface On get data listener.
+     */
     public interface OnGetDataListener {
+        /**
+         * On success.
+         *
+         * @param dataSnapshot the data snapshot
+         */
         void onSuccess(DataSnapshot dataSnapshot);
     }
 

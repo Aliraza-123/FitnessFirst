@@ -15,6 +15,9 @@ import com.example.fitnessfirst.data.remote.models.User;
 import com.example.fitnessfirst.utils.Utils;
 
 
+/**
+ * The type Sign up activity.
+ */
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edtEmail, edtFirstName, edtLastName, edtPassword, edtConfirmPassword;

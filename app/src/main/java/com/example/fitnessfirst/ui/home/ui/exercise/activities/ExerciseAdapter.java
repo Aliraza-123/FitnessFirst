@@ -17,11 +17,20 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+/**
+ * The type Exercise adapter.
+ */
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.MyViewHolder> {
 
     private final Context context;
     private List<Exercise> adapterData;
 
+    /**
+     * Instantiates a new Exercise adapter.
+     *
+     * @param context       the context
+     * @param todoArrayList the todo array list
+     */
     public ExerciseAdapter(Context context, List<Exercise> todoArrayList) {
         this.context = context;
         this.adapterData = todoArrayList;
@@ -46,6 +55,11 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.MyView
 
     }
 
+    /**
+     * Sets adapter data.
+     *
+     * @param adapterData the adapter data
+     */
     public void setAdapterData(List<Exercise> adapterData) {
         this.adapterData = adapterData;
         this.notifyDataSetChanged();
@@ -59,11 +73,19 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.MyView
     }
 
 
+    /**
+     * The type My view holder.
+     */
     protected class MyViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView titleTextView;
         private final TextView descTextView;
 
+        /**
+         * Instantiates a new My view holder.
+         *
+         * @param itemView the item view
+         */
         protected MyViewHolder(View itemView) {
             super(itemView);
 

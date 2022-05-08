@@ -19,6 +19,9 @@ import com.example.fitnessfirst.ui.home.ui.exercise.activities.LegsExerciseActiv
 import com.example.fitnessfirst.ui.home.ui.exercise.activities.ShouldersExerciseActivity;
 
 
+/**
+ * The type Exercise fragment.
+ */
 public class ExerciseFragment extends Fragment {
 
     private FragmentDashboardBinding binding;

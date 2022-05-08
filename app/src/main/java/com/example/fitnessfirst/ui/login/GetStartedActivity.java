@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessfirst.R;
 
+/**
+ * The type Get started activity.
+ */
 public class GetStartedActivity extends AppCompatActivity {
 
     @Override

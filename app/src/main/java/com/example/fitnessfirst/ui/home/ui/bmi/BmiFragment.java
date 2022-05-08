@@ -13,6 +13,9 @@ import com.example.fitnessfirst.databinding.FragmentBmiBinding;
 import com.example.fitnessfirst.utils.Utils;
 
 
+/**
+ * The type Bmi fragment.
+ */
 public class BmiFragment extends Fragment {
 
     private FragmentBmiBinding binding;

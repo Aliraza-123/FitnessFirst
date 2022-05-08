@@ -14,6 +14,9 @@ import com.example.fitnessfirst.data.local.entities.Exercise;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Back exercise activity.
+ */
 public class BackExerciseActivity extends AppCompatActivity implements Observer<List<Exercise>> {
 
     private RecyclerView recyclerView;

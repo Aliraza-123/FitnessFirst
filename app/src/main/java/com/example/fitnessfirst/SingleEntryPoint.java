@@ -7,12 +7,20 @@ import com.example.fitnessfirst.data.remote.FirebaseDatabaseHelper;
 import com.google.firebase.FirebaseApp;
 
 
+/**
+ * The type Single entry point.
+ */
 public class SingleEntryPoint extends Application {
 
     private static final String TAG = "ApplicationContext";
 
     private static Context context;
 
+    /**
+     * Gets app context.
+     *
+     * @return the app context
+     */
     public static Context getAppContext() {
         return SingleEntryPoint.context;
     }

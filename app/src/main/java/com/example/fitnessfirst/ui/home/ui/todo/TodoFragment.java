@@ -21,6 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * The type Todo fragment.
+ */
 public class TodoFragment extends Fragment implements View.OnClickListener,
         Observer<List<TodoTask>>, TodoAdapter.OnDeleteClickListener, TodoAdapter.OnCheckedClickListener {
 
@@ -36,6 +39,9 @@ public class TodoFragment extends Fragment implements View.OnClickListener,
     private Button shareButton;
     private Button clearButton;
 
+    /**
+     * Instantiates a new Todo fragment.
+     */
     public TodoFragment() {
         // Required empty public constructor
     }

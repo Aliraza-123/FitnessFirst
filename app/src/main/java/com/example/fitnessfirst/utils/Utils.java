@@ -20,9 +20,21 @@ import java.util.regex.Pattern;
 public class Utils {
 
 
+    /**
+     * The constant INSERT.
+     */
     public static final int INSERT = 22;
+    /**
+     * The constant UPDATE.
+     */
     public static final int UPDATE = 33;
+    /**
+     * The constant DELETE.
+     */
     public static final int DELETE = 44;
+    /**
+     * The constant DELETE_ALL.
+     */
     public static final int DELETE_ALL = 55;
 
     /**
@@ -147,6 +159,12 @@ public class Utils {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Round double.
+     *
+     * @param bmi the bmi
+     * @return the double
+     */
     public static double round(double bmi) {
         return Math.round(bmi * 100.0) / 100.0;
     }

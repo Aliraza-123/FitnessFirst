@@ -18,6 +18,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+/**
+ * The type Todo adapter.
+ */
 public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.MyViewHolder> {
 
     private final Context context;
@@ -26,16 +29,32 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.MyViewHolder> 
     private OnDeleteClickListener onDeleteClickListener;
     private OnCheckedClickListener onCheckedClickListener;
 
+    /**
+     * Instantiates a new Todo adapter.
+     *
+     * @param context       the context
+     * @param todoArrayList the todo array list
+     */
     public TodoAdapter(Context context, List<TodoTask> todoArrayList) {
         this.context = context;
         this.adapterData = todoArrayList;
 
     }
 
+    /**
+     * Sets on delete click listener.
+     *
+     * @param onDeleteClickListener the on delete click listener
+     */
     public void setOnDeleteClickListener(OnDeleteClickListener onDeleteClickListener) {
         this.onDeleteClickListener = onDeleteClickListener;
     }
 
+    /**
+     * Sets on checked click listener.
+     *
+     * @param onCheckedClickListener the on checked click listener
+     */
     public void setOnCheckedClickListener(OnCheckedClickListener onCheckedClickListener) {
         this.onCheckedClickListener = onCheckedClickListener;
     }
@@ -72,6 +91,11 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.MyViewHolder> 
         }
     }
 
+    /**
+     * Sets adapter data.
+     *
+     * @param adapterData the adapter data
+     */
     public void setAdapterData(List<TodoTask> adapterData) {
         this.adapterData = adapterData;
         this.notifyDataSetChanged();
@@ -84,21 +108,45 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.MyViewHolder> 
         else return 0;
     }
 
+    /**
+     * The interface On delete click listener.
+     */
     public interface OnDeleteClickListener {
+        /**
+         * On delete clicked.
+         *
+         * @param todoTask the todo task
+         */
         void onDeleteClicked(TodoTask todoTask);
     }
 
 
+    /**
+     * The interface On checked click listener.
+     */
     public interface OnCheckedClickListener {
+        /**
+         * On check clicked.
+         *
+         * @param todoTask the todo task
+         */
         void onCheckClicked(TodoTask todoTask);
     }
 
+    /**
+     * The type My view holder.
+     */
     protected class MyViewHolder extends RecyclerView.ViewHolder {
 
         private final ImageView deleteImageView;
         private final TextView titleTextView;
         private final ImageView checkImageView;
 
+        /**
+         * Instantiates a new My view holder.
+         *
+         * @param itemView the item view
+         */
         protected MyViewHolder(View itemView) {
             super(itemView);
 

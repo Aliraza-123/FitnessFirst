@@ -10,11 +10,23 @@ import java.util.HashSet;
 import java.util.Set;
 
 
+/**
+ * The type Network state receiver.
+ */
 public class NetworkStateReceiver extends BroadcastReceiver {
 
+    /**
+     * The Connected.
+     */
     public Boolean connected;
+    /**
+     * The Listeners.
+     */
     protected Set<NetworkStateReceiverListener> listeners;
 
+    /**
+     * Instantiates a new Network state receiver.
+     */
     public NetworkStateReceiver() {
         listeners = new HashSet<>();
         connected = null;
@@ -53,18 +65,37 @@ public class NetworkStateReceiver extends BroadcastReceiver {
         }
     }
 
+    /**
+     * Add listener.
+     *
+     * @param l the l
+     */
     public void addListener(NetworkStateReceiverListener l) {
         listeners.add(l);
         notifyState(l);
     }
 
+    /**
+     * Remove listener.
+     *
+     * @param l the l
+     */
     public void removeListener(NetworkStateReceiverListener l) {
         listeners.remove(l);
     }
 
+    /**
+     * The interface Network state receiver listener.
+     */
     public interface NetworkStateReceiverListener {
+        /**
+         * Network available.
+         */
         void networkAvailable();
 
+        /**
+         * Network unavailable.
+         */
         void networkUnavailable();
     }
 }

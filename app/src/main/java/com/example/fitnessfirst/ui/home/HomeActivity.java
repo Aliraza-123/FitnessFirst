@@ -15,6 +15,9 @@ import com.example.fitnessfirst.ui.home.ui.home.HomeFragment;
 import com.example.fitnessfirst.ui.home.ui.todo.TodoFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ * The type Home activity.
+ */
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private ActivityHomeBinding binding;

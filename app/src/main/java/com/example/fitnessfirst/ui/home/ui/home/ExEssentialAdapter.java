@@ -17,11 +17,20 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+/**
+ * The type Ex essential adapter.
+ */
 public class ExEssentialAdapter extends RecyclerView.Adapter<ExEssentialAdapter.MyViewHolder> {
 
     private final Context context;
     private List<ExerciseEssentials> adapterData;
 
+    /**
+     * Instantiates a new Ex essential adapter.
+     *
+     * @param context       the context
+     * @param todoArrayList the todo array list
+     */
     public ExEssentialAdapter(Context context, List<ExerciseEssentials> todoArrayList) {
         this.context = context;
         this.adapterData = todoArrayList;
@@ -46,6 +55,11 @@ public class ExEssentialAdapter extends RecyclerView.Adapter<ExEssentialAdapter.
 
     }
 
+    /**
+     * Sets adapter data.
+     *
+     * @param adapterData the adapter data
+     */
     public void setAdapterData(List<ExerciseEssentials> adapterData) {
         this.adapterData = adapterData;
         this.notifyDataSetChanged();
@@ -59,11 +73,19 @@ public class ExEssentialAdapter extends RecyclerView.Adapter<ExEssentialAdapter.
     }
 
 
+    /**
+     * The type My view holder.
+     */
     protected class MyViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView titleTextView;
         private final TextView descTextView;
 
+        /**
+         * Instantiates a new My view holder.
+         *
+         * @param itemView the item view
+         */
         protected MyViewHolder(View itemView) {
             super(itemView);
 
